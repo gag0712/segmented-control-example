@@ -1,3 +1,8 @@
+# Example Video
+
+https://github.com/gag0712/segmented-control-example/assets/13525840/031aa1a3-21b6-4700-ad03-5c5f68144f0e
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
