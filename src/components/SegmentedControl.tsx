@@ -29,6 +29,7 @@ export const SegmentedControl = <T extends string>({
   useEffect(() => {
     if (segmentList.indexOf(currentSegment) === -1) {
       offset.value = 0;
+      setCurrentSegment(segmentList[0]);
     } else {
       offset.value =
         ((parentWidth - 4) / segmentList.length) *
