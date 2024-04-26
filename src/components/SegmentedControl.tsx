@@ -3,7 +3,7 @@ import {Pressable, StyleSheet, Text, View} from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
-  withSpring,
+  withTiming,
 } from 'react-native-reanimated';
 
 type TSegmentedControl<T> = {
@@ -22,7 +22,7 @@ export const SegmentedControl = <T extends string>({
   const offset = useSharedValue(0);
   const animatedStyles = useAnimatedStyle(() => {
     return {
-      transform: [{translateX: withSpring(offset.value)}],
+      transform: [{translateX: withTiming(offset.value)}],
     };
   });
   return (
