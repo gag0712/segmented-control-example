@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import Animated, {
   useAnimatedStyle,
@@ -24,7 +24,18 @@ export const SegmentedControl = <T extends string>({
     return {
       transform: [{translateX: withTiming(offset.value)}],
     };
-  });
+  }, []);
+
+  useEffect(() => {
+    if (segmentList.indexOf(currentSegment) === -1) {
+      offset.value = 0;
+    } else {
+      offset.value =
+        ((parentWidth - 4) / segmentList.length) *
+        segmentList.indexOf(currentSegment);
+    }
+  }, [segmentList.length]);
+
   return (
     <View
       style={[styles.container, {flexDirection: 'row'}]}
